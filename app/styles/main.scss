@@ -1,0 +1,79 @@
+@import 'vars';
+@import 'typography';
+
+body {
+  font-family: Helvetica, sans-serif;
+  color: $font-color--dark;
+  background-color: white;
+
+}
+
+header {
+	background: #06cca1;
+	color: white;
+}
+
+.container {
+	width: 90%;
+	margin: 30px auto;
+}
+
+.nav-heading {
+	padding: 25px;
+}
+
+.project-card {
+	float: left;
+	border: 1px solid tranparent;
+	width: 30%;
+	margin: 40px 40px 0 0;
+}
+
+.user-task-container {
+	overflow: auto;
+    white-space: nowrap;
+}
+
+.task-card {
+	border-width: 0 0 0 2px !important;
+	border-radius: 0 !important;
+	border-style: solid !important;
+	border-color: grey;
+}
+
+.user-name-box {
+	border-radius: 4px;
+	text-align: center; 
+	padding: 30px; 
+	margin-bottom: 15px;
+	background: white;
+	box-shadow: 0 1px 3px 0 #D4D4D5, 0 0 0 1px #D4D4D5;
+}
+
+.user-task {
+	width: 270px;
+	border-style: dashed;
+	border-width: 0 0 0 1px;
+	border-color: #c9c9c9;
+	height: 80vh; 
+	display: inline-block;
+	vertical-align:top;
+	padding: 10px
+}
+
+.dropdown-custom {
+	padding: 0 5px;
+	border-radius: 10px;
+	background: #efefef;
+	color: white;
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+		width: 100%;
+	}
+
+	.project-card {
+		width: 100%;
+	}
+}

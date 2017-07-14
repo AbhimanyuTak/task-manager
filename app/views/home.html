@@ -1,0 +1,15 @@
+
+<div class="container">
+	<div class="ui grid">
+		<div ng-repeat="p in projects" class="five wide column">
+			<div project-card-directive title="{{p.title}}" description="{{p.description}}" pid="{{p.id}}" members="{{p.members.length}}">???</div>
+		</div>
+
+		<div class="five wide column">
+			<div class="ui centered card" style="padding: 50px; text-align: center">
+			  <div><i class="plus square outline icon"></i><div>
+			  <p>New Project</p>
+			</div>
+		</div>
+	</div>
+</div>

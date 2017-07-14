@@ -1,0 +1,31 @@
+<div  class="container user-task-container">
+	<div class="user-task" ng-repeat="u in userTasksObj">
+
+		<div class="user-name-box" style="">{{u.name}}</div>
+
+		<div ondrop="angular.element(this).scope().dropTask(event, angular.element(this).scope().u.id)" ondragover="angular.element(this).scope().allowDrop(event)" style="height: 100%" data-taskcontaoner = "true">
+			<div style="white-space: normal; margin-bottom: 15px" ng-repeat="t in u.tasks" draggable="true" ondragstart="angular.element(this).scope().dragTask(event, angular.element(this).scope().u.id, angular.element(this).scope().t.id)" data-taskdiv = "true">
+				<div class="ui card task-card" ng-style="{'border-color': '{{taskStatus[t.status].color}}'}">
+				    <div class="content">
+				    	<div class="right floated time">
+				    		<div class="ui dropdown dropdown-custom" ng-style="{'font-size': '10px', 'background': '{{taskStatus[t.status].color}}'}">
+								<div class="text">{{taskStatus[t.status].status}}</div>
+								<i class="dropdown icon"></i>
+								<div class="menu">
+									<div class="item" ng-repeat="(sid, stat) in taskStatus" data-value={{sid}} 
+									data-text="{{stat.status}}" ng-click="updateTaskStatus(t.id, sid, stat.color)">{{stat.status}}</div>
+								</div>
+				    		</div>
+			    		</div>
+						<div class="header" style="font-size: 14px">{{t.title}}</div>
+						<div class="description" style="font-size: 12px">{{t.description}}</div>
+				    </div>
+			  	</div>
+			</div>
+			<div class="ui centered card" style="padding: 15px; text-align: center">
+				<div><i class="plus square outline icon"></i><div>
+				<p>Create Task</p>
+			</div>
+		</div>
+	</div>
+</div>
