@@ -1,6 +1,6 @@
-UI web application for task management tool
+Web application UI for task management tool
 
-Frameworks: AngularJS, Semantic
+Frameworks: AngularJS, Semantic UI
 
 Libraries: JQuery
 
@@ -18,3 +18,6 @@ Getting up and running on local machine
 ```npm install```
 
 ```npm run dev```
+
+
+Note: LocalStorage is being used for persisting data, clear your local storage to reset all data

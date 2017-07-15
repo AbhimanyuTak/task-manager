@@ -27,11 +27,47 @@ header {
 	cursor: pointer;
 }
 
+.fs-10 {
+	font-size: 10px;
+}
+
+.fs-12 {
+	font-size: 12px !important;
+}
+
+.fs-14 {
+	font-size: 14px;
+}
+
+.fs-16 {
+	font-size: 16px;
+}
+
+.fs-18 {
+	font-size: 18px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
 .project-card {
 	float: left;
 	border: 1px solid tranparent;
 	width: 30%;
 	margin: 40px 40px 0 0;
+}
+
+.new-project-card {
+	color: #ccc;
+}
+
+.new-project-card:hover {
+	border-width: 1px !important;
+	border-style: solid !important;
+	border-color: #06cca1 !important;
+	color: #06cca1;
+	box-shadow: none;
 }
 
 .user-task-container {
@@ -45,6 +81,24 @@ header {
 	border-style: solid !important;
 	background-color: #f5f5f5 !important;
 	box-shadow: none !important;
+	cursor: move;
+}
+
+.new-task-card {
+	border-width: 1px !important;
+	border-radius: 0 !important;
+	border-color: #f5f5f5 !important;
+	background-color: #f5f5f5 !important;
+	box-shadow: none !important;
+	color: #ccc;
+}
+
+.new-task-card:hover {
+	border-width: 1px !important;
+	border-style: solid !important;
+	border-color: #06cca1 !important;
+	background-color: #fff !important;
+	color: #06cca1;
 }
 
 .user-name-box {

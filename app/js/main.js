@@ -6,7 +6,6 @@ import onConfig  from './on_config';
 import onRun     from './on_run';
 import 'angular-ui-router';
 import './templates';
-import './filters';
 import './controllers';
 import './services';
 import './directives';
@@ -15,7 +14,6 @@ import './directives';
 const requires = [
   'ui.router',
   'templates',
-  'app.filters',
   'app.controllers',
   'app.services',
   'app.directives'

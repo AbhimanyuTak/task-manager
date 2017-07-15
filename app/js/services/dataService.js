@@ -4,76 +4,6 @@ function DataService($http) {
   let data = {}
   data['projects'] = []
   data['tasks'] = []
-  // data['users'] = []
-
-  // data['projects'] = [
-  //   {
-  //     id: 1,
-  //     title: "Some project title",
-  //     description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text. jdsnjk sdj j jsd j sdjsdknkdfnkdsfkklm dsn",
-  //     members: [1, 2],
-  //     tasks: [1, 2, 3]   
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Some project title",
-  //     description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
-  //     members: [1, 2],
-  //     tasks: [4, 5]   
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Some project title",
-  //     description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
-  //     members: [3],
-  //     tasks: [6]   
-  //   }
-  // ]
-
-  // data['tasks'] = [
-  //   {
-  //     title: "Some Random task",
-  //     id: 1,
-  //     assignedTo: 1,
-  //     description: "Here is the desc",
-  //     status: "3"
-  //   },
-  //   {
-  //     title: "Some Random task",
-  //     id: 2,
-  //     assignedTo: 2,
-  //     description: "Here is the desc",
-  //     status: "3"
-  //   },
-  //   {
-  //     title: "Some Random task",
-  //     id: 3,
-  //     assignedTo: 1,
-  //     description: "Here is the desc",
-  //     status: "3"
-  //   },
-  //   {
-  //     title: "Some Random task",
-  //     id: 4,
-  //     assignedTo: 2,
-  //     description: "Here is the desc",
-  //     status: "3"
-  //   },
-  //   {
-  //     title: "Some Random task",
-  //     id: 5,
-  //     assignedTo: 2,
-  //     description: "Here is the desc",
-  //     status: "3"
-  //   },
-  //   {
-  //     title: "Some Random task",
-  //     id: 6,
-  //     assignedTo: 3,
-  //     description: "Here is the desc",
-  //     status: "3"
-  //   }
-  // ]
 
   data['users'] = [
     {
@@ -130,10 +60,8 @@ function DataService($http) {
   function localStorageFetch() {
     if (typeof(Storage) !== "undefined") {
         let lsData = localStorage.getItem("app-data");
-        console.log(lsData)
         if(lsData != undefined && lsData != null && lsData != "") {
           data = JSON.parse(lsData)
-          console.log(data)
         }
     } else {
         console.log("Local Storage not functional");
@@ -214,7 +142,6 @@ function DataService($http) {
     for(let t in data.tasks) {
       if(data['tasks'][t].id == id) {
         data['tasks'][t].assignedTo = to;
-        console.log(data['tasks'][t])
         break;
       }
     }
@@ -223,7 +150,6 @@ function DataService($http) {
 
   this.addTask = function(pid, uid, title, description, status) {
     let tid = getRndInteger();
-    console.log(data['tasks'])
     data['tasks'].push({
       title: title,
       description: description,
@@ -235,7 +161,6 @@ function DataService($http) {
     // Update project object
     for(let i in data['projects']) {
       if(data['projects'][i].id == pid) {
-        console.log(data['projects'][i])
         if(!data['projects'][i].hasOwnProperty('tasks')) {
           data['projects'][i]['tasks'] = []
         }
@@ -250,7 +175,6 @@ function DataService($http) {
     for(let t in data.tasks) {
       if(data['tasks'][t].id == id) {
         data['tasks'][t].status = status;
-        console.log(data['tasks'][t])
         break;
       }
     }

@@ -24,8 +24,6 @@ let ProjectCtrl = ['$scope', '$rootScope', 'DataService', '$stateParams', '$time
 
 
   	$scope.userTasksObj = DataService.getData().users.filter(function(user) {
-      console.log(user, $scope.projectDetails.members)
-
   		return $scope.projectDetails.members.indexOf(user.id) >= 0;
   	})
 
@@ -34,9 +32,6 @@ let ProjectCtrl = ['$scope', '$rootScope', 'DataService', '$stateParams', '$time
   			return $scope.userTasksObj[i].id == task.assignedTo;
   		})
   	}
-  	// console.log($scope.projectDetails)
-  	// console.log($scope.allTasks)
-  	// console.log($scope.userTasksObj)
   }
 
   initTaskPage()
@@ -63,7 +58,6 @@ let ProjectCtrl = ['$scope', '$rootScope', 'DataService', '$stateParams', '$time
 
   // Wrapper for drag and drop task switcher calling service function
   function switchTask(fromUser, toUser, taskID) {
-    console.log(fromUser, toUser, taskID)
     DataService.switchTasks(fromUser, toUser, taskID)
     initTaskPage()
     $scope.$digest()
@@ -71,7 +65,6 @@ let ProjectCtrl = ['$scope', '$rootScope', 'DataService', '$stateParams', '$time
 
   // Functions calling addTask helper from DataService and re rendering the updated data
   $scope.createNewTask = function(pid, uid, title, description, selectedStatus) {
-    // console.log(uid, title, description, selectedStatus);
     DataService.addTask(pid, uid, title, description, selectedStatus)
     initTaskPage()
     // Re-init dropdown for new element
@@ -79,7 +72,6 @@ let ProjectCtrl = ['$scope', '$rootScope', 'DataService', '$stateParams', '$time
   }
 
   $scope.updateTaskStatus = function(taskID, status) {
-  	console.log(taskID, status)
   	DataService.updateTaskStatus(taskID, status)
   	initTaskPage()
     // Delayed digest cycle manual trigger: facing re rendering issues otherwise
