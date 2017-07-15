@@ -1,9 +1,12 @@
 UI web application for task management tool
 
 Frameworks: AngularJS, Semantic
+
 Libraries: JQuery
-CSS Pre Processor: SASS
-Build Tools: Gulp
+
+CSS Pre Processor: SASS	
+
+Build and Bundling Tools: Gulp, Browserify
 
 
 Getting up and running on local machine
