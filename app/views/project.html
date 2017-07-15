@@ -1,3 +1,4 @@
+<div ng-include src="'header.html'"></div>
 <div  class="container user-task-container">
 	<div class="user-task" ng-repeat="u in userTasksObj">
 
@@ -5,10 +6,10 @@
 
 		<div ondrop="angular.element(this).scope().dropTask(event, angular.element(this).scope().u.id)" ondragover="angular.element(this).scope().allowDrop(event)" style="height: 100%" data-taskcontaoner = "true">
 			<div style="white-space: normal; margin-bottom: 15px" ng-repeat="t in u.tasks" draggable="true" ondragstart="angular.element(this).scope().dragTask(event, angular.element(this).scope().u.id, angular.element(this).scope().t.id)" data-taskdiv = "true">
-				<div class="ui card task-card" ng-style="{'border-color': '{{taskStatus[t.status].color}}'}">
+				<div class="ui card task-card" ng-style="{'border-color': taskStatus[t.status].color}">
 				    <div class="content">
 				    	<div class="right floated time">
-				    		<div class="ui dropdown dropdown-custom" ng-style="{'font-size': '10px', 'background': '{{taskStatus[t.status].color}}'}">
+				    		<div class="ui dropdown dropdown-custom" ng-style="{'font-size': '10px', 'background': taskStatus[t.status].color}">
 								<div class="text">{{taskStatus[t.status].status}}</div>
 								<i class="dropdown icon"></i>
 								<div class="menu">
@@ -22,9 +23,39 @@
 				    </div>
 			  	</div>
 			</div>
-			<div class="ui centered card" style="padding: 15px; text-align: center">
-				<div><i class="plus square outline icon"></i><div>
+
+			<div class="ui centered card new-task-form-button clickable" style="padding: 15px; text-align: center">
+				<div><i class="plus square outline icon"></i></div>
 				<p>Create Task</p>
+			</div>
+			<div class="ui special popup">
+				<div task-form-directive class="ui" pid="pid" uid="u.id" allstatus="taskStatus" create-new-task="createNewTask(pid, uid, title, description, selectedStatus)">???</div>
+			</div>
+		</div>
+	</div> 
+	<div class="user-task"> 
+		<div class="user-name-box clickable add-new-user" style="">Add New User</div>
+		<div class="ui special popup">
+			<div class="ui card">
+			  <div class="content">
+			    <div class="header">Add User</div>
+			  </div>
+			  <div class="content">
+			    <div class="ui form">
+			    	<!-- <div ng-class="{'field': true, 'error': title_error}">
+					    <label>Name</label>
+					    <input type="text" name="first-name" placeholder="Task Title..." ng-model="userName">
+					</div> -->
+					<label></label>
+					<select class="ui fluid search dropdown" ng-model="selectedUser">
+		  				<option value="">Select</option>
+		  				<option ng-repeat="u in users track by $index" value="{{u.id}}">{{u.name}}</option>
+					</select>
+				</div>
+			  </div>
+			  <div class="extra content">
+			    <button class="ui button right floated" ng-click="addProjectUser(selectedUser)">ADD</button>
+			  </div>
 			</div>
 		</div>
 	</div>

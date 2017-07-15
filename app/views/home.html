@@ -1,14 +1,17 @@
-
+<div ng-include src="'header.html'"></div>
 <div class="container">
-	<div class="ui grid">
-		<div ng-repeat="p in projects" class="five wide column">
+	<div class="ui grid stackable">
+		<div ng-repeat="p in projects track by $index" class="five wide column">
 			<div project-card-directive title="{{p.title}}" description="{{p.description}}" pid="{{p.id}}" members="{{p.members.length}}">???</div>
 		</div>
 
 		<div class="five wide column">
-			<div class="ui centered card" style="padding: 50px; text-align: center">
-			  <div><i class="plus square outline icon"></i><div>
+			<div class="ui centered card new-product-form-button clickable" style="padding: 40px; text-align: center">
+			  <div><i class="plus square outline icon"></i></div>
 			  <p>New Project</p>
+			</div>
+			<div class="ui special popup">
+				<div project-form-directive class="ui" allmembers="users" create-new-project="createNewProject(title, description, selectedMembers)">???</div>
 			</div>
 		</div>
 	</div>

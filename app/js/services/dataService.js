@@ -2,148 +2,78 @@ function DataService($http) {
   'ngInject';
 
   let data = {}
-  data['projects'] = [
-    {
-      id: 1,
-      title: "Some project title",
-      description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text. jdsnjk sdj j jsd j sdjsdknkdfnkdsfkklm dsn",
-      members: [1, 2, 3, 4, 5, 6, 7, 8],
-      tasks: [1, 3, 5]   
-    },
-    {
-      id: 2,
-      title: "Some project title",
-      description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
-      members: [2, 3, 4, 5],
-      tasks: [4, 5]   
-    },
-    {
-      id: 3,
-      title: "Some project title",
-      description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
-      members: [1, 2, 3, 4, 5],
-      tasks: [6]     
-    },
-    {
-      id: 4,
-      title: "Some project title",
-      description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
-      members: [3, 4, 6, 7],
-      tasks: [7]   
-    },
-    {
-      id: 5,
-      title: "Some project title",
-      description: "Some project descriptiake sure to restrict the text.",
-      members: [1, 2, 3, 4],
-      tasks: [8, 9, 10]   
-    },
-    {
-      id: 6,
-      title: "Some project title",
-      description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
-      members: [1, 2, 3, 4],
-      tasks: [11]    
-    },
-    {
-      id: 7,
-      title: "Some project title",
-      description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
-      members: [1, 2, 3, 4] 
-    },
-    {
-      id: 8,
-      title: "Some project title",
-      description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
-      members: [1, 2, 3, 4] 
-    },
-    {
-      id: 9,
-      title: "Some project title",
-      description: "Some project description  to restrict the text.",
-      members: [1, 2, 3, 4] 
-    }
-  ]
+  data['projects'] = []
+  data['tasks'] = []
+  // data['users'] = []
 
-  data['tasks'] = [
-    {
-      title: "Some Random task",
-      id: 1,
-      assignedTo: 1,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 2,
-      assignedTo: 1,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 3,
-      assignedTo: 2,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 4,
-      assignedTo: 2,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 5,
-      assignedTo: 2,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 6,
-      assignedTo: 3,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 7,
-      assignedTo: 4,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 8,
-      assignedTo: 4,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 9,
-      assignedTo: 5,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 10,
-      assignedTo: 6,
-      description: "Here is the desc",
-      status: "3"
-    },
-    {
-      title: "Some Random task",
-      id: 11,
-      assignedTo: 7,
-      description: "Here ``is`` the desc",
-      status: "3"
-    }
-  ]
+  // data['projects'] = [
+  //   {
+  //     id: 1,
+  //     title: "Some project title",
+  //     description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text. jdsnjk sdj j jsd j sdjsdknkdfnkdsfkklm dsn",
+  //     members: [1, 2],
+  //     tasks: [1, 2, 3]   
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Some project title",
+  //     description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
+  //     members: [1, 2],
+  //     tasks: [4, 5]   
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Some project title",
+  //     description: "Some project description that can be very long and it may tend to break the UI. Make sure to restrict the text.",
+  //     members: [3],
+  //     tasks: [6]   
+  //   }
+  // ]
+
+  // data['tasks'] = [
+  //   {
+  //     title: "Some Random task",
+  //     id: 1,
+  //     assignedTo: 1,
+  //     description: "Here is the desc",
+  //     status: "3"
+  //   },
+  //   {
+  //     title: "Some Random task",
+  //     id: 2,
+  //     assignedTo: 2,
+  //     description: "Here is the desc",
+  //     status: "3"
+  //   },
+  //   {
+  //     title: "Some Random task",
+  //     id: 3,
+  //     assignedTo: 1,
+  //     description: "Here is the desc",
+  //     status: "3"
+  //   },
+  //   {
+  //     title: "Some Random task",
+  //     id: 4,
+  //     assignedTo: 2,
+  //     description: "Here is the desc",
+  //     status: "3"
+  //   },
+  //   {
+  //     title: "Some Random task",
+  //     id: 5,
+  //     assignedTo: 2,
+  //     description: "Here is the desc",
+  //     status: "3"
+  //   },
+  //   {
+  //     title: "Some Random task",
+  //     id: 6,
+  //     assignedTo: 3,
+  //     description: "Here is the desc",
+  //     status: "3"
+  //   }
+  // ]
 
   data['users'] = [
     {
@@ -151,53 +81,69 @@ function DataService($http) {
       id: 1
     },
     {
-      name: "Ram",
+      name: "Shivani",
       id: 2
     },
     {
-      name: "Shyam",
+      name: "Ram",
       id: 3
     },
     {
-      name: "Suresh",
+      name: "Gaurav",
       id: 4
     },
     {
-      name: "Dimesh",
+      name: "Rishabh",
       id: 5
     },
     {
-      name: "Mukesh",
+      name: "Pallavi",
       id: 6
     },
     {
-      name: "Prabhu",
+      name: "Shyam",
       id: 7
     },
     {
-      name: "Rakesh",
+      name: "Manish",
       id: 8
     },
     {
-      name: "Dino",
+      name: "Sandeep",
       id: 9
     },
     {
-      name: "Mikeu",
+      name: "Deepak",
       id: 10
     }
   ]
 
   function localStorageUpsert() {
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("app-data", JSON.stringify(data));
+    } else {
+        console.log("Local Storage not functional, website will not persist data");
+    }
 
   }
 
   function localStorageFetch() {
-
+    if (typeof(Storage) !== "undefined") {
+        let lsData = localStorage.getItem("app-data");
+        console.log(lsData)
+        if(lsData != undefined && lsData != null && lsData != "") {
+          data = JSON.parse(lsData)
+          console.log(data)
+        }
+    } else {
+        console.log("Local Storage not functional");
+    }
   }
 
+  localStorageFetch()
+
   this.getData = function (){
-    return data
+    return data;
   };
 
   this.getProjectDetails = function(pid) {
@@ -217,12 +163,51 @@ function DataService($http) {
     })
   }
 
-  this.addUserToProject = function(pid, uid) {
+  this.addUser = function(name) {
+    let uid = getRndInteger()
+    data['users'].push({
+      name: name,
+      id: uid
+    })
+    localStorageUpsert()
+    return uid;
+  }
 
+  this.addNewUserToProject = function(pid, name) {
+    let uid = this.addUser(name)
+
+    for(let i in data['projects']) {
+      if(data['projects'][i].id == pid) {
+        data['projects'][i].members.push(uid);
+        break;
+      }
+    }
+    localStorageUpsert()
   };
 
-  this.addNewProject = function(name, description) {
+  this.addCurrentUserToProject = function(pid, uid) {
+    uid = parseInt(uid)
 
+    for(let i in data['projects']) {
+      if(data['projects'][i].id == pid && data['projects'][i].members.indexOf(uid) < 0) {
+        data['projects'][i].members.push(uid);
+        break;
+      }
+    }
+    localStorageUpsert()
+  };
+
+  this.addNewProject = function(title, description, members) {
+    members = members.map(function(mem) {
+      return parseInt(mem)
+    })
+    data['projects'].push({
+        title: title,
+        description: description,
+        members: members,
+        id:getRndInteger()
+    })
+    localStorageUpsert()
   };
 
   this.switchTasks = function (from, to, id){
@@ -233,6 +218,32 @@ function DataService($http) {
         break;
       }
     }
+    localStorageUpsert()
+  }
+
+  this.addTask = function(pid, uid, title, description, status) {
+    let tid = getRndInteger();
+    console.log(data['tasks'])
+    data['tasks'].push({
+      title: title,
+      description: description,
+      status: status,
+      id:tid,
+      assignedTo: uid
+    })
+
+    // Update project object
+    for(let i in data['projects']) {
+      if(data['projects'][i].id == pid) {
+        console.log(data['projects'][i])
+        if(!data['projects'][i].hasOwnProperty('tasks')) {
+          data['projects'][i]['tasks'] = []
+        }
+        data['projects'][i]['tasks'].push(tid);
+        break;
+      }
+    }
+    localStorageUpsert()
   }
 
   this.updateTaskStatus = function (id, status){
@@ -243,6 +254,13 @@ function DataService($http) {
         break;
       }
     }
+    localStorageUpsert()
+  }
+
+  // Utils
+  // Generating random number between 100000 & 10000000
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (9900000 + 1) ) + 100000;
   }
 }
 

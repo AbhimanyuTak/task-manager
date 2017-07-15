@@ -1,0 +1,29 @@
+
+<div class="ui card">
+  <div class="content">
+    <div class="header">Create Project</div>
+  </div>
+  <div class="content">
+    <div class="ui form">
+    	<div ng-class="{'field': true, 'error': title_error}">
+		    <label>Title</label>
+		    <input type="text" name="first-name" placeholder="Task Title..." ng-model="title">
+		</div>
+		<div ng-class="{'field': true, 'error': desc_error}">
+			<label>Description</label>
+			<textarea rows="2" placeholder="Start typing..." ng-model="description"></textarea>
+		</div>
+		<div ng-class="{'field': true, 'error': mem_error}">
+			<label>Members</label>
+			<select class="ui fluid search dropdown" multiple="" ng-model="selectedMembers">
+  				<option value="">Select</option>
+  				<option ng-repeat="am in allmembers track by $index" value="{{am.id}}">{{am.name}}</option>
+			</select>
+		</div>
+	</div>
+  </div>
+  <div class="extra content">
+    <button class="ui button right floated" ng-click="newProject()">Create</button>
+    <button class="ui button right floated" ng-click="hidePopup()">Cancel</button>
+  </div>
+</div>
