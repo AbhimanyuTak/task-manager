@@ -29,6 +29,8 @@ function ProjectFormDirective() {
           return;
         }
         $scope.createNewProject({title: $scope.title, description: $scope.description, selectedMembers: $scope.selectedMembers})
+        delete $scope.title;
+        delete $scope.description;
         $scope.hidePopup();
       }
 

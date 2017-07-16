@@ -1,8 +1,8 @@
 <div style="float: right; padding: 20px; color: white" ui-sref="Home">
 	<i class="big white remove icon link"></i>
 </div>
-<div ng-include src="'header.html'">Hello</div>
-<div  class="container user-task-container">
+<div ng-include src="'header.html'"></div>
+<div  class="user-task-container">
 	<div class="user-task" ng-repeat="u in userTasksObj track by $index">
 
 		<div class="user-name-box fs-12 bold" style="">{{u.name}}</div>
@@ -55,7 +55,7 @@
 				</div>
 			  </div>
 			  <div class="extra content">
-			    <button class="ui button right floated" ng-click="addProjectUser(selectedUser)">ADD</button>
+			    <button class="ui button right floated submit-button" ng-click="addProjectUser(selectedUser)">ADD</button>
 			  </div>
 			</div>
 		</div>

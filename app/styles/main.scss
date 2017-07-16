@@ -5,7 +5,6 @@ body {
   font-family: Helvetica, sans-serif;
   color: $font-color--dark;
   background-color: white;
-
 }
 
 header {
@@ -81,11 +80,6 @@ header {
 	box-shadow: none;
 }
 
-.user-task-container {
-	overflow: auto;
-    white-space: nowrap;
-}
-
 .task-card {
 	border-width: 0 0 0 2px !important;
 	border-radius: 0 !important;
@@ -121,15 +115,21 @@ header {
 	box-shadow: 0 1px 3px 0 #D4D4D5, 0 0 0 1px #D4D4D5;
 }
 
+.user-task-container {
+	overflow: auto;
+    white-space: nowrap;
+    margin: 40px 0 0 40px;
+}
+
 .user-task {
 	width: 270px;
 	border-style: dashed;
 	border-width: 0 0 0 1px;
 	border-color: #c9c9c9;
-	height: 80vh; 
 	display: inline-block;
 	vertical-align:top;
-	padding: 10px
+	padding: 10px;
+	height: 100vh;
 }
 
 .dropdown-custom {
@@ -137,6 +137,31 @@ header {
 	border-radius: 10px;
 	background: #efefef;
 	color: white;
+}
+
+.submit-button {
+	padding: 8px 20px !important;
+	background: #06cca1 !important;
+	color: white !important;
+	border-style: solid !important;
+	border-radius: 50px !important;
+	border-width: 1px !important;
+}
+
+.cancel-button {
+	padding: 8px 20px !important;
+	background: white !important;
+	color: grey !important;
+	border-style: solid !important;
+	border-radius: 50px !important;
+	border-width: 1px !important;
+	border-color: grey !important;
+	margin-righr: 20px !important;
+}
+
+.popup {
+	background: red;
+	padding: 0 !important;
 }
 
 @media screen and (max-width: 767px) {

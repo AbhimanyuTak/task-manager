@@ -30,6 +30,8 @@ function TaskFormDirective() {
           return;
         }
         $scope.createNewTask({pid: $scope.pid, uid: $scope.uid, title: $scope.title, description: $scope.description, selectedStatus: $scope.selectedStatus})
+        delete $scope.title;
+        delete $scope.description;
         $scope.hidePopup()
       }
 
